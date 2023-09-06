@@ -18,9 +18,14 @@ public class TurismoappApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("*");
+				registry.addMapping("/**")
+						.allowedOriginPatterns("*") // Patrón de origen permitido
+						.allowedMethods("GET", "POST", "PUT", "DELETE")
+						.allowCredentials(true);
 			}
 		};
 	}
+
+
 
 }
