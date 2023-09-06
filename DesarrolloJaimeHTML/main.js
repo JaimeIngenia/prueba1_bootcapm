@@ -122,6 +122,7 @@ $(document).ready( ( ) => {
                     url:'http://localhost:8080/zonas/'+id,
                     type: 'DELETE',
                     dataType: 'json',
+                   
                     success: (res) => {
                         $('#messages').html('Usuario Eliminado').css('display','block');
                         list();
@@ -160,6 +161,7 @@ $(document).ready( ( ) => {
                 url: 'http://localhost:8080/zonas/'+id,
                 type: 'GET',
                 dataType: 'json',
+                
                 success: (res) => {
                     $('#id').val(res.id);
                     $('#nombre').val(res.nombre);
@@ -192,6 +194,9 @@ $(document).ready( ( ) => {
                 url: 'http://localhost:8080/zonas/'+id,
                 contentType: 'spplication/json',
                 type: 'PUT',
+                headers: {
+                    "Content-Type": "application/json" // Agrega la cabecera Content-Type
+                },
                 data:JSON.stringify(datosAlumno),
                 dataType: 'json',
                 success: (res) =>{
