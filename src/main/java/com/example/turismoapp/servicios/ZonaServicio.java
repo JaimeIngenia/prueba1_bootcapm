@@ -43,6 +43,7 @@ public class ZonaServicio {
 
             //2. A la empresa que existe le cambio la informacion que el usuario necesita
             ZonaQueExiste.setDescripcion(datosAModificar.getDescripcion());
+            ZonaQueExiste.setNombre(datosAModificar.getNombre());
 
             //3. Guardar la informacion que se acaba de editar (SET)
             return (this.objetoZonaRepositorio.save(ZonaQueExiste));
